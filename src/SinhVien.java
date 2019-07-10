@@ -48,21 +48,13 @@ public class SinhVien {
         this.pointSV = pointSV;
     }
 
-    public void inputIforSV() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Mời bạn nhập tên sinh viên");
-        nameSV = scanner.nextLine();
-        System.out.println("Nhập năm sinh của sinh viên");
-        yearSV = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Nhập địa chỉ sinh viên");
-        addressSV = scanner.nextLine();
-        System.out.println("Nhập điểm sinh viên");
-        pointSV = scanner.nextFloat();
-
-    }
-
-    public void outputIforSV() {
-        System.out.println("Sinh viên: " + this.nameSV + "\tsinh năm: " + this.yearSV + "\tđịa chỉ: " + this.addressSV + "\tđiểm: " + this.pointSV);
+    @Override
+    public String toString() {
+        return "SinhVien{" +
+                "nameSV='" + nameSV + '\'' +
+                ", yearSV=" + yearSV +
+                ", addressSV='" + addressSV + '\'' +
+                ", pointSV=" + pointSV +
+                '}';
     }
 }

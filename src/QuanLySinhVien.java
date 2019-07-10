@@ -1,23 +1,20 @@
-import java.util.Scanner;
+import java.util.Arrays;
 
-public class QuanLySinhVien extends SinhVien {
-    public static void main(String[] args) {
-        String nameSV;
-        int yearSV;
-        String addressSV;
-        float pointSV;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập số sinh viên: ");
-        int n = scanner.nextInt();
-        SinhVien[] sv = new SinhVien[n];
-        for (int i = 0; i < sv.length; i++) {
-            System.out.println("Nhập vào thông tin sinh viên thứ" + (i + 1));
-            System.out.println("Nhập vào tên sinh viên thứ " + (i + 1));
-            nameSV.sv[i] = scanner.
+public class QuanLySinhVien {
+    SinhVien[] sinhViens = new SinhVien[20];
+    private int size = 0;
+
+    public void add(SinhVien sv) {
+        if (size == sinhViens.length) {
+            int newSize = sinhViens.length * 2;
+            sinhViens = Arrays.copyOf(sinhViens, newSize);
         }
-        System.out.println("Danh sách sinh viên vừa nhập là: ");
-        for (int i = 0; i < sv.length; i++) {
-            sv[i].outputIforSV();
+        sinhViens[size++] = new SinhVien(sv.getNameSV(), sv.getYearSV(), sv.getAddressSV(), sv.getPointSV());
+    }
+
+    public void findAll() {
+        for (int i = 0; i < size; i++) {
+            System.out.println(sinhViens[i]);
         }
     }
 }
